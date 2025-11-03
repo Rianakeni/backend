@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_schedules",
+  "info": {
+    "displayName": "Schedule"
+  },
+  "options": {},
+  "attributes": {
+    "tanggal": {
+      "type": "date"
+    },
+    "jam": {
+      "type": "time"
+    }
+  },
+  "config": {}
+}

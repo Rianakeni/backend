@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "riwayats",
+  "info": {
+    "singularName": "riwayat",
+    "pluralName": "riwayats",
+    "displayName": "Riwayat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "riwayats"
+    }
+  }
+}

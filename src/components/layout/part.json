@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_parts",
+  "info": {
+    "displayName": "Part"
+  },
+  "options": {},
+  "attributes": {
+    "schedule": {
+      "type": "component",
+      "component": "blocks.schedule",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

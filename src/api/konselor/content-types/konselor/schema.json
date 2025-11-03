@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "konselors",
+  "info": {
+    "singularName": "konselor",
+    "pluralName": "konselors",
+    "displayName": "Konselor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "jabatan": {
+      "type": "string"
+    },
+    "profil": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

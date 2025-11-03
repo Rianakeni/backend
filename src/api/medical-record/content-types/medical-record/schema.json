@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medical_records",
+  "info": {
+    "singularName": "medical-record",
+    "pluralName": "medical-records",
+    "displayName": "Medical Record"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "permasalahan": {
+      "type": "text"
+    },
+    "diagnosa": {
+      "type": "text"
+    },
+    "rekomendasi": {
+      "type": "text"
+    },
+    "isFilled": {
+      "type": "boolean",
+      "default": false
+    },
+    "appointment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::appointment.appointment",
+      "mappedBy": "medical_record"
+    },
+    "filePDF": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

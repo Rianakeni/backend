@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedules",
+  "info": {
+    "singularName": "schedule",
+    "pluralName": "schedules",
+    "displayName": "Schedule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isBooked": {
+      "type": "boolean",
+      "default": false
+    },
+    "bookedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "schedule"
+    },
+    "appointment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::appointment.appointment",
+      "mappedBy": "schedule"
+    },
+    "tanggal": {
+      "type": "date"
+    },
+    "jam_mulai": {
+      "type": "time"
+    },
+    "jam_selesai": {
+      "type": "time"
+    },
+    "phoneNumber": {
+      "type": "string"
+    }
+  }
+}
