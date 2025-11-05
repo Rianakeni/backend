@@ -40,6 +40,11 @@
     },
     "phoneNumber": {
       "type": "string"
+    },
+    "konselor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

@@ -585,6 +585,10 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     isBooked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     jam_mulai: Schema.Attribute.Time;
     jam_selesai: Schema.Attribute.Time;
+    konselor: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
