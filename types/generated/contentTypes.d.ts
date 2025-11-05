@@ -575,8 +575,8 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    bookedBy: Schema.Attribute.Relation<
-      'oneToOne',
+    booked_by: Schema.Attribute.Relation<
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1097,7 +1097,7 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    schedule: Schema.Attribute.Relation<'oneToOne', 'api::schedule.schedule'>;
+    schedules: Schema.Attribute.Relation<'oneToMany', 'api::schedule.schedule'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

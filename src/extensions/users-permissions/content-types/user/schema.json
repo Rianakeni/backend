@@ -78,11 +78,11 @@
       "target": "api::riwayat.riwayat",
       "mappedBy": "student"
     },
-    "schedule": {
+    "schedules": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::schedule.schedule",
-      "inversedBy": "bookedBy"
+      "mappedBy": "booked_by"
     },
     "phonenumber": {
       "type": "string"

@@ -32,11 +32,11 @@
         "Cancelled"
       ]
     },
-    "bookedBy": {
+    "booked_by": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "schedule"
+      "inversedBy": "schedules"
     },
     "phoneNumber": {
       "type": "string"
