@@ -11,22 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "isBooked": {
-      "type": "boolean",
-      "default": false
-    },
-    "bookedBy": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "schedule"
-    },
-    "appointment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::appointment.appointment",
-      "mappedBy": "schedule"
-    },
     "tanggal": {
       "type": "date"
     },
@@ -35,6 +19,24 @@
     },
     "jam_selesai": {
       "type": "time"
+    },
+    "isBooked": {
+      "type": "boolean",
+      "default": false
+    },
+    "statusJadwal": {
+      "type": "enumeration",
+      "enum": [
+        "Scheduled ",
+        "Completed",
+        "Cancelled"
+      ]
+    },
+    "bookedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "schedule"
     },
     "phoneNumber": {
       "type": "string"

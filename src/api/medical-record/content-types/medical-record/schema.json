@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
     "permasalahan": {
       "type": "text"
     },
@@ -23,12 +28,6 @@
     "isFilled": {
       "type": "boolean",
       "default": false
-    },
-    "appointment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::appointment.appointment",
-      "mappedBy": "medical_record"
     },
     "filePDF": {
       "type": "media",

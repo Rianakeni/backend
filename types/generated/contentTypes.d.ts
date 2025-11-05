@@ -430,49 +430,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAppointmentAppointment extends Struct.CollectionTypeSchema {
-  collectionName: 'appointments';
-  info: {
-    displayName: 'Appointment';
-    pluralName: 'appointments';
-    singularName: 'appointment';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    konselor: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::appointment.appointment'
-    > &
-      Schema.Attribute.Private;
-    medical_record: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::medical-record.medical-record'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    schedule: Schema.Attribute.Relation<'oneToOne', 'api::schedule.schedule'>;
-    statusJadwal: Schema.Attribute.Enumeration<
-      ['Scheduled ', 'Completed', 'Cancelled']
-    >;
-    student: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -551,10 +508,6 @@ export interface ApiMedicalRecordMedicalRecord
     draftAndPublish: true;
   };
   attributes: {
-    appointment: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::appointment.appointment'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -570,6 +523,10 @@ export interface ApiMedicalRecordMedicalRecord
     permasalahan: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     rekomendasi: Schema.Attribute.Text;
+    student: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -618,10 +575,6 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    appointment: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::appointment.appointment'
-    >;
     bookedBy: Schema.Attribute.Relation<
       'oneToOne',
       'plugin::users-permissions.user'
@@ -640,6 +593,9 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     phoneNumber: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    statusJadwal: Schema.Attribute.Enumeration<
+      ['Scheduled ', 'Completed', 'Cancelled']
+    >;
     tanggal: Schema.Attribute.Date;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1161,7 +1117,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::appointment.appointment': ApiAppointmentAppointment;
       'api::article.article': ApiArticleArticle;
       'api::konselor.konselor': ApiKonselorKonselor;
       'api::medical-record.medical-record': ApiMedicalRecordMedicalRecord;
