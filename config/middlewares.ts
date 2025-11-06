@@ -11,7 +11,7 @@ export default [
         "http://localhost:3001", // Alternative development port
         process.env.FRONTEND_URL || "http://localhost:3000", // Production frontend URL dari env variable
         // Tambahkan production URL jika ada
-        // 'https://your-production-domain.com',
+        "https://better-u-web-application.vercel.app",
       ],
       headers: [
         "Content-Type",
