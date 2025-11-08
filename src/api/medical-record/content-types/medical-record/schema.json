@@ -11,10 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "student": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+    "studentName": {
+      "type": "string"
+    },
+    "NIM": {
+      "type": "string"
+    },
+    "tanggal": {
+      "type": "date"
     },
     "permasalahan": {
       "type": "text"
@@ -24,17 +28,6 @@
     },
     "rekomendasi": {
       "type": "text"
-    },
-    "isFilled": {
-      "type": "boolean",
-      "default": false
-    },
-    "filePDF": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "files"
-      ]
     }
   }
 }
