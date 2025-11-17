@@ -28,6 +28,14 @@
     },
     "rekomendasi": {
       "type": "text"
+    },
+    "Konseling_Lebih_Lanjut": {
+      "type": "boolean",
+      "default": false
+    },
+    "Butuh_Dirujukkan": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

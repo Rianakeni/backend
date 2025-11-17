@@ -455,7 +455,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
     status_article: Schema.Attribute.Enumeration<
       ['published', 'draft', 'archived']
     >;
@@ -508,10 +507,14 @@ export interface ApiMedicalRecordMedicalRecord
     draftAndPublish: true;
   };
   attributes: {
+    Butuh_Dirujukkan: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     diagnosa: Schema.Attribute.Text;
+    Konseling_Lebih_Lanjut: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
